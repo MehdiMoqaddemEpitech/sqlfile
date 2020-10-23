@@ -1,0 +1,4 @@
+- name: changename
+  hostname:
+    name: "nsapoold05"
+
