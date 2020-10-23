@@ -1,0 +1,40 @@
+- name: Install apache2
+  apt:
+    name: apache2
+    update_cache: yes
+    state: latest
+
+- name: Intall libapache-php7.3
+  apt:
+    name: libapache2-mod-php7.3
+    update_cache: yes
+    state: latest
+
+- name: Copy file to /var/www/html
+  copy:
+    src: /root/sqlfile/data.php
+    dest: /var/www/html/
+
+- name: Enabled mod_rewrite
+  apache2_module:
+    name: rewrite
+    state: present
+
+#- name: Create virtual host file data.conf
+#  template:
+#    src: virtualhost.conf
+#    dest: /etc/apache2/sites-available/data.conf
+
+#- name: A2dissite 000-default.conf
+#  command: a2dissite 000-default.conf
+
+#- name: A2ensite data.conf
+#  command: a2ensite data.conf
+#  args:
+#    creates: /etc/apache2/sites-enabled/data.conf
+
+- name: Restart apache2 service
+  service:
+    name: apache2
+    state: restarted
+
