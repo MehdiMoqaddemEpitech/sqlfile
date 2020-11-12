@@ -1,8 +1,0 @@
-- name: apacheinstall
-  apt:
-    name: apache2
-
-- name: movefile
-  copy:
-    src: /etc/ansible/sqlfile/data.php
-    dest: /etc/apache2/data.php

@@ -1,2 +1,0 @@
-- name: Welcome
-  shell: echo "Welcome guys" >> /etc/motd

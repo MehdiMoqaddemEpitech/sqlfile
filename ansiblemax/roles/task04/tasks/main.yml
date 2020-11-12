@@ -1,7 +1,0 @@
-- name: Create user marvin
-  user:
-    name: marvin
-    password: "{{ 'NsaPool42' | password_hash('sha512') }}"
-    state: present
-    createhome: yes
-    home: /home/marvin

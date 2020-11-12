@@ -1,3 +1,0 @@
-- name: Configure the login message
-  shell: echo "Welcome to the jungle!" >> /etc/motd
-
